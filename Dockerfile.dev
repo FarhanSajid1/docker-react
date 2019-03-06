@@ -1,0 +1,12 @@
+FROM node:alpine
+MAINTAINER Farhan Sajid <farhansajid7861@gmail.com>
+
+WORKDIR /app
+
+COPY package.json .
+RUN npm install -g watchman &&\
+    npm install
+
+COPY . .
+
+CMD ["npm", "start"]
